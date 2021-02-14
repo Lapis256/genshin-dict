@@ -6,8 +6,9 @@
 
 button {
 	padding: 0;
-	height: 30px;
-	width: 120px;
+	margin: 5px;
+	height: 40px;
+	width: 150px;
 	color: white;
 	background-color: rgb(95, 95, 255);
 	border-radius: 5px;
