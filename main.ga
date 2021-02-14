@@ -1,0 +1,16 @@
+ID = "1rnp9V54AAs9k-XMp8nvIW2-Z2vglFD60d2yf9bpGCdI"
+
+const doGet = function(){
+  let data = getData()
+  return ContentService.createTextOutput()
+  .setMimeType(ContentService.MimeType.JSON)
+  .setContent(JSON.stringify(data))
+}
+
+const getData = function(){
+  let spreadsheet = SpreadsheetApp.openById(ID)
+  let sheet = spreadsheet.getSheetByName("用語辞書")
+  let lastRow = sheet.getLastRow()
+  let range = sheet.getRange([`A2:D${lastRow}`])
+  return range.getValues()
+}
