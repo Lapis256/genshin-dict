@@ -4,7 +4,7 @@ MICROSOFT = 1;
 GBOARD = 2;
 
 async function createBlob (type) {
-	let res = await fetch(URL);
+	let res = await fetch(URL, {mode: "cors"});
 	let data = await res.json();
 	console.log(JSON.stringify(data));
 
