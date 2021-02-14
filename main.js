@@ -5,7 +5,7 @@ const GBOARD = 2;
 let data;
 
 function createInput(value) {
-	let input = document.createElement("input")
+	let input = document.createElement("input");
 	input.type = "checkbox";
 	input.name = "type";
 	input.value = value;
@@ -50,7 +50,7 @@ function getSelectedType() {
 }
 
 function formattingData(ime,type) {
-	let text = ""
+	let text = "";
 	data.filter(d => type.filter(t => d[3].startsWith(t.value)).length)
 		.forEach(d => {
 			switch (ime) {
@@ -63,7 +63,7 @@ function formattingData(ime,type) {
 			}
 			text += (d.join("	") + "\n");
 		});
-	return text
+	return text;
 }
 
 async function createBlob(ime,str) {
