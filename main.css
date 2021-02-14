@@ -1,14 +1,18 @@
 .parent {
 	text-align: center;
-	padding: 10px 50px 30px 50px;
-	border-radius: 15px;
+	padding: 10px;
+}
+
+.flex {
+	padding: 10px;
+	display: flex;
 }
 
 button {
-	padding: 0;
+	padding: 10px;
 	margin: 5px;
-	height: 40px;
-	width: 150px;
+	width: 50%;
+	cursor: pointer;
 	color: white;
 	background-color: rgb(95, 95, 255);
 	border-radius: 5px;
