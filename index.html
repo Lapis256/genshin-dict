@@ -6,10 +6,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="main.css">
 	<title>GenshinDict</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 </head>
 
 <body>
 	<div class="parent">
+		<button onclick="loadData()">スプレッドシートから読み込む</button>
+		<p>必要のないもののチェックを外してください。</p>
+		<div class="form">
+			<div id="form">
+				<p>スプレッドシートから読み込んでください。</p>
+			</div>
+		</div>
 		<div>
 			<h2>PC</h2>
 			<div class="flex">
@@ -25,8 +36,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="main.js"></script>
-	<script type="text/javascript" src="zip.min.js"></script>
 </body>
 
 </html>

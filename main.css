@@ -3,6 +3,31 @@
 	padding: 10px;
 }
 
+.form {
+	background-color: #ececec56;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+
+	text-align: left;
+	width: 80%;
+	margin: 10px auto;
+}
+
+#form {
+	padding: 10px 60px;
+}
+
+label {
+	display: inline-block;
+	width: 10em;
+}
+
+input {
+	margin-right: 0.5em;
+}
+
 .flex {
 	padding: 10px;
 	display: flex;
