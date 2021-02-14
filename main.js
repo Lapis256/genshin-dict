@@ -4,42 +4,6 @@ const MICROSOFT = 1;
 const GBOARD = 2;
 let data;
 
-async function createBlob(ime,str) {
-	switch (ime) {
-		case MICROSOFT:
-			let encoder = new TextEncoder("Shift_JIS",{ NONSTANDARD_allowLegacyEncoding: true });
-			str = encoder.encode(str);
-			break;
-		case GBOARD:
-			let zip = new JSZip();
-			zip.file("dictionary.txt",str);
-			return await zip.generateAsync({type: "blob"});
-	}
-
-	return new Blob([str]);
-}
-
-function strToUint8Arr(str) {
-	var str = btoa(unescape(encodeURIComponent(str))),
-		charList = str.split(''),uintArray = [];
-	for (var i = 0; i < charList.length; i++) {
-		uintArray.push(charList[i].charCodeAt(0));
-	}
-	return new Uint8Array(uintArray);
-}
-
-function stringToByteArray(str) {
-	var array = new (window.Uint8Array !== void 0 ? Uint8Array : Array)(str.length);
-	var i;
-	var il;
-
-	for (i = 0,il = str.length; i < il; ++i) {
-		array[i] = str.charCodeAt(i) & 0xff;
-	}
-
-	return array;
-}
-
 function createInput(value) {
 	let input = document.createElement("input")
 	input.type = "checkbox";
@@ -95,6 +59,21 @@ function formattingData(ime,type) {
 			text += (d.join("	") + "\n");
 		});
 	return text
+}
+
+async function createBlob(ime,str) {
+	switch (ime) {
+		case MICROSOFT:
+			let encoder = new TextEncoder("Shift_JIS",{ NONSTANDARD_allowLegacyEncoding: true });
+			str = encoder.encode(str);
+			break;
+		case GBOARD:
+			let zip = new JSZip();
+			zip.file("dictionary.txt",str);
+			return await zip.generateAsync({type: "blob"});
+	}
+
+	return new Blob([str]);
 }
 
 function download(ime) {
