@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="main.css">
 	<title>GenshinDict</title>
 
+	<script>window.TextEncoder = window.TextDecoder = null;</script>
+	<script src="https://cdn.jsdelivr.net/npm/text-encoding@0.7.0/lib/encoding.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/text-encoding@0.7.0/lib/encoding-indexes.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
@@ -24,15 +27,15 @@
 		<div>
 			<h2>PC</h2>
 			<div class="flex">
-				<button onclick="download(MICROSOFT)">MicrosoftIME</button>
+				<button onclick="download(MICROSOFT)">Microsoft IME</button>
 				<button onclick="download(GOOGLE)">Google日本語入力</button>
 			</div>
 		</div>
 		<div>
 			<h2>Android</h2>
 			<div class="flex">
-				<button onclick="download(GOOGLE)">Google日本語入力</button>
 				<button onclick="download(GBOARD)">Gboard</button>
+				<button onclick="download(GOOGLE)">Google日本語入力</button>
 			</div>
 		</div>
 	</div>

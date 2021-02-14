@@ -6,14 +6,14 @@ let data;
 
 async function createBlob(ime,str) {
 	switch (ime) {
-		case GOOGLE:
-			break;
 		case MICROSOFT:
+			let encoder = new TextEncoder("Shift_JIS",{ NONSTANDARD_allowLegacyEncoding: true });
+			str = encoder.encode(str);
 			break;
 		case GBOARD:
 			let zip = new JSZip();
 			zip.file("dictionary.txt",str);
-			return await zip.generateAsync({ type: "blob" });
+			return await zip.generateAsync({type: "blob"});
 	}
 
 	return new Blob([str]);
@@ -21,12 +21,12 @@ async function createBlob(ime,str) {
 
 function strToUint8Arr(str) {
 	var str = btoa(unescape(encodeURIComponent(str))),
-		charList = str.split(''), uintArray = [];
+		charList = str.split(''),uintArray = [];
 	for (var i = 0; i < charList.length; i++) {
-	  uintArray.push(charList[i].charCodeAt(0));
+		uintArray.push(charList[i].charCodeAt(0));
 	}
 	return new Uint8Array(uintArray);
-  }
+}
 
 function stringToByteArray(str) {
 	var array = new (window.Uint8Array !== void 0 ? Uint8Array : Array)(str.length);
