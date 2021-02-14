@@ -22,6 +22,9 @@ function createLabel(type) {
 }
 
 function loadData() {
+	let button = document.getElementById("load");
+	button.onclick = null;
+	button.innerText = "読み込み中…";
 	fetch(url).then(r => {
 		r.json().then(d => {
 			data = d;
@@ -36,6 +39,8 @@ function loadData() {
 			let form_div = document.getElementById("form");
 			form_div.innerHTML = "";
 			form_div.appendChild(form);
+
+			button.remove();
 		});
 	});
 }
