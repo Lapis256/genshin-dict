@@ -1,0 +1,15 @@
+.parent {
+	text-align: center;
+	padding: 10px 50px 30px 50px;
+	border-radius: 15px;
+}
+
+button {
+	padding: 0;
+	height: 30px;
+	width: 120px;
+	color: white;
+	background-color: rgb(95, 95, 255);
+	border-radius: 5px;
+	border: none;
+}
