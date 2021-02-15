@@ -94,7 +94,6 @@ function download(ime) {
 	}
 
 	let dict_str = formattingData(ime,type);
-	let aTag = document.createElement("a");
 	createBlob(ime,dict_str).then((blob) => {
 		let name = (ime == GBOARD) ? "dict.zip" : "dict.txt";
 		saveAs(blob,name);
